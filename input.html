@@ -125,6 +125,7 @@ div {
 		var category = getCookie("category");
 		console.log(category);
 
+   
 		if(category == null || category == ""){
 
 
@@ -132,10 +133,14 @@ div {
 
           document.getElementById("category").value = category;
 		}
+    
 	}
 	
 
 	function CheckPointBeforeSubmit(){
+
+      var category = document.getElementById("category").value;
+      setCookie("category", category, 30);
 
 		if(document.getElementById("en_title").value == "" || document.getElementById("en_option1").value == "" 
 			 || document.getElementById("en_option2").value == ""  || document.getElementById("en_option3").value == "" 
@@ -147,9 +152,9 @@ div {
 			alert("Fill all fields firts!");
 		}else{
 
-			var category = document.getElementById("category").value;
+		
 
-		setCookie("category", category, 30);
+		
 
 		document.getElementById("myForm").submit();
 
