@@ -81,6 +81,9 @@ function random(){
 	}
 
    // echo $position;
+
+	// closing connection
+   mysqli_close($conn);
 }
 
 
@@ -134,6 +137,8 @@ function custom(){
 	}
 
    // echo $position;
+		// closing connection
+   mysqli_close($conn);
 }
 
 function getQuestionDetails(){
@@ -214,6 +219,10 @@ function getQuestionDetails(){
 			"computer_first_id" => $computer_first_id, "computer_total_questions" => $computer_total_questions,
 		);
 		echo json_encode($output, JSON_PRETTY_PRINT);
+
+
+	// closing connection
+   mysqli_close($conn);
 
 	
 
